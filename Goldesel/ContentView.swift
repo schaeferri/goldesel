@@ -22,10 +22,15 @@ struct BasicButton: ButtonStyle {
 
 
 struct ContentView: View {
+    var buttonAction: ()->Void {
+            {
+                print("Button tapped!")
+            }
+        }
     var body: some View {
         VStack {
             HStack{
-                Button("Button 1") {}
+                Button("Button 1", action: buttonAction)
                     .buttonStyle(BasicButton())
                 Button("Button 2") {}
                     .buttonStyle(BasicButton())
